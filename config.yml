@@ -15,7 +15,7 @@ menu:
 default_category: blog
 
 user: fydy
-repository: issue
+repository: issue-blog
 
 plugins:
   - acyort-rss
