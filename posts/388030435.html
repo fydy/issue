@@ -60,19 +60,21 @@
 <p>员工可以此为由，随时与公司解除劳动关系，并向公司主张加班费及经济补偿金。如果确实因为工作需要，单位采取不定时工作制或综合计算工时工作制的，需要按照劳动部门的规定申请批准，如果未经批准企业擅自实行特殊工时工作制的，则面临劳动部门的责令整改和处罚。。</p>
 </div>
   <div class="comments">
-<div id="gitting-container"></div>
-<link rel="stylesheet" href="https://raw.githubusercontent.com/zhw2590582/gitting/master/dist/gitting.css">
-<script src="https://raw.githubusercontent.com/zhw2590582/gitting/master/dist/gitting.js"></script>
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 <script>
-var gitting = new Gitting({
-    clientID: '8c41b16a70910b0692df',
-    clientSecret: '079d61508f7fb7133654221f587d5907edccb394',
-    repo: 'issue',
-    owner: 'fydy',
-    admin: ['fydy'],
-    id: location.pathname
-});      
-gitting.render('#gitting-container');
+var gitalk = new Gitalk({
+  clientID: '8c41b16a70910b0692df',
+  clientSecret: '079d61508f7fb7133654221f587d5907edccb394',
+  repo: 'issue',
+  owner: 'fydy',
+  admin: ['fydy'],
+  id: location.pathname,      // Ensure uniqueness and length less than 50
+  distractionFreeMode: false  // Facebook-like distraction free mode
+})
+
+gitalk.render('gitalk-container')
   </script>
   </div>
 </div>
