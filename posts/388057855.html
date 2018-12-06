@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="/css/style.css" />
 
   <title>
-wusong
+增加评论 - wusong - wusong
 </title>
 </head>
 
@@ -35,73 +35,31 @@ wusong
 </div>
 
 
+<div id="post" class="center">
+  <p class="time">December 06, 2018</p>
+  <h1 class="title">增加评论 - wusong</h1>
+  <div class="content"><p><a href="http://www.wusong.me/posts/388050201.html">http://www.wusong.me/posts/388050201.html</a> </p>
+<p> wusongfayuan</p>
+</div>
+  <div class="comments">
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+var gitalk = new Gitalk({
+  clientID: '8c41b16a70910b0692df',
+  clientSecret: '079d61508f7fb7133654221f587d5907edccb394',
+  repo: 'issue',
+  owner: 'fydy',
+  admin: ['fydy'],
+  id: location.pathname,      // Ensure uniqueness and length less than 50
+  distractionFreeMode: false  // Facebook-like distraction free mode
+})
 
-<ul class="list center">
-
-
-
-<li>
-<p>December 06, 2018</p>
-<a href="/posts/388057855.html">增加评论 - wusong</a>
-<div></div>
-</li>
-
-
-
-
-<li>
-<p>December 06, 2018</p>
-<a href="/posts/388050375.html">企业常见的劳动用工法律风险 - wusong</a>
-<div></div>
-</li>
-
-
-
-
-<li>
-<p>December 06, 2018</p>
-<a href="/posts/388050201.html">增加评论</a>
-<div></div>
-</li>
-
-
-
-
-<li>
-<p>December 06, 2018</p>
-<a href="/posts/388030435.html">企业常见的劳动用工法律风险</a>
-<div></div>
-</li>
-
-
-
-
-<li>
-<p>December 06, 2018</p>
-<a href="/posts/388029273.html">拼多多商业模式研究【网络转载】</a>
-<div></div>
-</li>
-
-
-</ul>
-
-
-
-<div id="pagination" class="center">
-  <div>
-    
-    <a class="disabled">Previous</a>
-    
-
-    <span><a class="current">1</a></span>
-
-    
-    <a rel="next" class="disabled">Next</a>
-    
+gitalk.render('gitalk-container')
+  </script>
   </div>
 </div>
-
-
 
 
 </div>
@@ -114,6 +72,9 @@ wusong
       <a target="_blank" href="https://github.com/acyortjs/theme-donob">donob</a>
     </div>
 </div>
+
+
+
 
 
 
