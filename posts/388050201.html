@@ -40,15 +40,16 @@
 <div id="post" class="center">
   <p class="time">December 06, 2018</p>
   <h1 class="title">增加评论</h1>
-  <div class="content"></div>
-  <div class="comments">
-        <div id="gitting-container"></div>
+  <div class="content"><p>123</p>
+</div>
+  <div class="comments"></div>
+    <div id="gitting-container"></div>
     <script src="/js/gitting.js"></script>
     <script>
         const gitting = new Gitting({
             clientID: '8c41b16a70910b0692df',
             clientSecret: '079d61508f7fb7133654221f587d5907edccb394',
-            repo: 'theme-donob',
+            repo: 'issue',
             owner: 'fydy',
             admin: ['fydy'],
             id: location.pathname
@@ -56,7 +57,6 @@
 
         gitting.render('#gitting-container');
     </script>
-  </div>
 </div>
 
 
