@@ -22,6 +22,7 @@ jobs:
       - run: cp config.bak.yml config.yml
       - run: npm i
       - run: npm i -S gitting
+      - npm i acyort-toc -S
       - run: git clone https://github.com/fydy/theme-donob.git themes/donob
       - run: acyort build
       - run: git checkout .
