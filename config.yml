@@ -21,6 +21,7 @@ plugins:
   - acyort-rss
   - acyort-archives
   - acyort-paginator
+  - acyort-toc
 
 public_dir: public
 
