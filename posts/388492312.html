@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="/css/app.css" />
 <link rel="stylesheet" href="/css/gitting.css" />
   <title>
-无讼法苑
+留言板 - 无讼法苑
 </title>
 </head>
 
@@ -37,64 +37,27 @@
 </div>
 
 
-
-<ul class="list center">
-
-
-
-<li>
-<p>December 07, 2018</p>
-<a href="/posts/388492312.html">留言板</a>
-<div></div>
-</li>
-
-
-
-
-<li>
-<p>December 07, 2018</p>
-<a href="/posts/388473724.html">用Github Issues搭建博客</a>
-<div></div>
-</li>
-
-
-
-
-<li>
-<p>December 06, 2018</p>
-<a href="/posts/388074939.html">公司常见的劳动用工法律风险</a>
-<div></div>
-</li>
-
-
-
-
-<li>
-<p>December 06, 2018</p>
-<a href="/posts/388074355.html">电商平台商业模式研究-以拼多多为例【网络转载】</a>
-<div></div>
-</li>
-
-
-</ul>
-
-
-
-<div id="pagination" class="center">
-  <div>
-    
-    <a rel="prev" href="/">Previous</a>
-    
-
-    <span><a href="/">1</a><a class="current">2</a></span>
-
-    
-    <a rel="next" class="disabled">Next</a>
-    
-  </div>
+<div id="post" class="center">
+  <p class="time">December 07, 2018</p>
+  <h1 class="title">留言板</h1>
+  <div class="content"><p>本博客使用的留言插件是Gitting，需要登录Github才能发表评论。</p>
 </div>
+  <div class="comments"></div>
+    <div id="gitting-container"></div>
+    <script src="/js/gitting.js"></script>
+    <script>
+        const gitting = new Gitting({
+            clientID: '8c41b16a70910b0692df',
+            clientSecret: '079d61508f7fb7133654221f587d5907edccb394',
+            repo: 'issue',
+            owner: 'fydy',
+            admin: ['fydy'],
+            id: location.pathname
+        });
 
-
+        gitting.render('#gitting-container');
+    </script>
+</div>
 
 
 </div>
@@ -107,6 +70,9 @@
       <a target="_blank" href="https://github.com/acyortjs/theme-donob">donob</a>
     </div>
 </div>
+
+
+
 
 
 
