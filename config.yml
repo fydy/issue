@@ -15,7 +15,7 @@ menu:
 default_category: blog
 
 user: fydy
-repository: issue-blog
+repository: elaw
 
 plugins:
   - acyort-rss
