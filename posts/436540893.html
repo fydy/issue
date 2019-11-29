@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="分享，极致生活！！！" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="/css/app.css" />
+<link rel="stylesheet" href="/css/gitting.css" />
+  <title>
+wordpress常用主题、插件优化 - 无讼法苑
+</title>
+</head>
+
+<body>
+
+<div class="main">
+
+<div class="header">
+    <a class="logo" href="/">无讼法苑</a><!--
+
+ --><div class="menu">
+        <a href="/archives/">Archives</a><a href="/about/">About</a>
+    </div>
+
+    <div class="social">
+        <a target="_blank" href="https://github.com/fydy/elaw/issues"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path>
+</svg></a><!--
+    --><a target="_blank" href="/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z"></path>
+</svg></a>
+        
+    </div>
+</div>
+
+
+<div id="post" class="center">
+  <p class="time">April 24, 2019</p>
+  <h1 class="title">wordpress常用主题、插件优化</h1>
+  <div class="content"><ul>
+<li><p>DIVI字体修改
+主题自加载google的开源字体，支持中文。google官方<a href="https://fonts.google.com/earlyaccess%E9%80%89%E6%8B%A9%E8%87%AA%E5%B7%B1%E9%9C%80%E8%A6%81%E7%9A%84%E5%AD%97%E4%BD%93%EF%BC%8C%E7%84%B6%E5%90%8E%E6%9B%BF%E6%8D%A2%5Cwp-content%5Cthemes%5CDivi%5Cfunctions.php%E7%BA%A6640~666%E8%A1%8C">https://fonts.google.com/earlyaccess选择自己需要的字体，然后替换\wp-content\themes\Divi\functions.php约640~666行</a></p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+<span>3</span>
+<span>4</span>
+<span>5</span>
+<span>6</span>
+<span>7</span>
+<span>8</span>
+<span>9</span>
+<span>10</span>
+<span>11</span>
+</pre>
+              </td>
+              <td class="code"><pre>
+      &#39;ms_MY&#39; &#x3D;&gt; array(
+          &#39;language_name&#39;   &#x3D;&gt; &#39;Malay&#39;,
+          &#39;google_font_url&#39; &#x3D;&gt; &#39;&#x2F;&#x2F;fonts.googleapis.com&#x2F;earlyaccess&#x2F;notosansmalayalam.css&#39;,
+          &#39;font_family&#39;     &#x3D;&gt; &quot;&#39;Noto Sans Malayalam&#39;, serif&quot;,
+      ),
+      &#39;zh_CN&#39; &#x3D;&gt; array(
+          &#39;language_name&#39;   &#x3D;&gt; &#39;Chinese&#39;,  &#x2F;&#x2F;这是中文
+          &#39;google_font_url&#39; &#x3D;&gt; &#39;&#x2F;&#x2F;fonts.googleapis.com&#x2F;earlyaccess&#x2F;cwtexfangsong.css&#39;, &#x2F;&#x2F;替换css地址
+          &#39;font_family&#39;     &#x3D;&gt; &quot;&#39;cwTeXFangSong&#39;, serif&quot;,
+      ),</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </li>
+<li><p>WPBakery Page Builder去除版权提示
+在源代码中，头部文件会出现WPBakery Page Builder版权的信息，打开\js_composer\include\classes\core\class-vc-base.php，约672行去除版权信息</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+<span>3</span>
+<span>4</span>
+</pre>
+              </td>
+              <td class="code"><pre>
+  public function addMetaData() {
+      echo &#39;meta name&#x3D;&quot;generator&quot; content&#x3D;&quot;Powered by WPBakery Page Builder - drag and drop page builder for WordPress.&quot;&#39; . &quot;\n&quot;;
+  }</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>建议把 echo 后面替换为百度的声明：meta name=&quot;applicable-device&quot; content=&quot;pc,mobile&quot; </p>
+</li>
+<li><p>Enfold汉化中文版
+去除google maps，后台加载更快。打开主体目录下，找到\enfold\framework\php\inc-autoconfig.php 约192行</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>&#x2F;&#x2F;require( AVIA_PHP.&#39;class-gmaps.php&#39; ); &#x2F;&#x2F;注解掉</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </li>
+<li><p>WP Rocket授权修改
+使用中，提示的授权与否对使用并没太大影响，如果要修改请打开wp-rocket\inc\classes\admin\settings\class-page.php，约200行找到</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+<span>3</span>
+<span>4</span>
+<span>5</span>
+<span>6</span>
+</pre>
+              </td>
+              <td class="code"><pre>private function get_customer_data() {
+      $customer_key   &#x3D; defined( &#39;WP_ROCKET_KEY&#39; ) ? WP_ROCKET_KEY : get_rocket_option( &#39;consumer_key&#39;, &#39;&#39; );
+      $customer_email &#x3D; defined( &#39;WP_ROCKET_EMAIL&#39; ) ? WP_ROCKET_EMAIL : get_rocket_option( &#39;consumer_email&#39;, &#39;&#39; );
+&#x2F;&#x2F;......省略一堆.....&#x2F;&#x2F;
+      return $customer_data;
+  }</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>删除这段，替换为下面，原理就是固定为Plus版，时间是今天加上一年，你自嗨写100年也可以。（仅对v3.2.6参考）</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+<span>3</span>
+<span>4</span>
+<span>5</span>
+</pre>
+              </td>
+              <td class="code"><pre>private function get_customer_data() {
+      $customer_data-&gt;licence_account &#x3D; &#39;Plus&#39;;
+        $customer_data-&gt;licence_expiration &#x3D;date(&#39;Y-M-d&#39;, strtotime(&#39;+1 years&#39;));
+        return $customer_data;
+  }</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </li>
+</ul>
+</div>
+  <div class="toc">
+
+</div>
+  
+  <div class="comments"></div>
+    <div id="gitting-container"></div>
+    <script src="/js/gitting.js"></script>
+    <script>
+        const gitting = new Gitting({
+            clientID: '8c41b16a70910b0692df',
+            clientSecret: '079d61508f7fb7133654221f587d5907edccb394',
+            repo: 'issue',
+            owner: 'fydy',
+            admin: ['fydy'],
+            id: location.pathname
+        });
+
+        gitting.render('#gitting-container');
+    </script>
+</div>
+
+
+</div>
+
+<div class="footer">
+    <div class="center">
+      无讼法苑 / Powered by
+      <a target="_blank" href="https://github.com/acyortjs/acyort">AcyOrt</a> /
+      Theme
+      <a target="_blank" href="https://github.com/acyortjs/theme-donob">donob</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="/css/app.css" />
 <link rel="stylesheet" href="/css/gitting.css" />
   <title>
-关于我 - 无讼法苑
+无需插件让WordPress网站调用高德地图的方法 - 无讼法苑
 </title>
 </head>
 
@@ -38,10 +38,25 @@
 
 
 <div id="post" class="center">
-  <p class="time">December 07, 2018</p>
-  <h1 class="title">关于我</h1>
-  <div class="content"><p>mail: <a href="mailto:chunxiaqiu13@gmail.com">chunxiaqiu13@gmail.com</a>
-QQ: 601743449</p>
+  <p class="time">May 16, 2019</p>
+  <h1 class="title">无需插件让WordPress网站调用高德地图的方法</h1>
+  <div class="content"><ul>
+<li>1.登录高德地图开放平台
+<a href="http://lbs.amap.com/console/show/tools">http://lbs.amap.com/console/show/tools</a>
+<img src="https://user-images.githubusercontent.com/39726855/57834177-4ed4c700-77ee-11e9-95e2-38c58a2f66b8.png" alt="image"></li>
+<li>2.点击“添加标注”，然后从地图上找到要显示的地理位置.
+<img src="https://user-images.githubusercontent.com/39726855/57834197-5d22e300-77ee-11e9-969e-2ed02c235831.png" alt="image"></li>
+<li>3.找到后点击选择“添加码点”，然后在地图点击添加，为了精准，可以将地图放大然后再标注。
+<img src="https://user-images.githubusercontent.com/39726855/57834221-68760e80-77ee-11e9-87e2-31ed65175993.png" alt="image"></li>
+<li>4.标注好之后可以添加文字说明，第一行是标题，可以用来显示公司名称。第二行是文字描述，可以放上地址等其他信息，需要注意，第二行文字区域不能直接换行，否则网站调用的时候会无法正确显示。
+<img src="https://user-images.githubusercontent.com/39726855/57834247-7461d080-77ee-11e9-8284-c4af991014e0.png" alt="image"></li>
+<li>5.都设置好之后，点击底部“获取代码”按钮，将所有代码复制，粘贴到网站对应的模块，如果网站用的是可视化编辑器，可以添加一个html模块，将代码粘贴进去。
+<img src="https://user-images.githubusercontent.com/39726855/57834265-7f1c6580-77ee-11e9-8b45-65cbb9641074.png" alt="image">
+<img src="https://user-images.githubusercontent.com/39726855/57834278-88a5cd80-77ee-11e9-93b2-6cab907c3f93.png" alt="image"></li>
+<li>6.最后可以调整一下地图的尺寸，例如宽度改成全宽，将原来的width:600px改成width:100%,这样就可以全宽显示，高度也可以按照自己需求去调整，觉得默认太高了，可以将height:600px改成height:500px
+<img src="https://user-images.githubusercontent.com/39726855/57834309-99eeda00-77ee-11e9-95f8-3efbb03d4200.png" alt="image">
+<img src="https://user-images.githubusercontent.com/39726855/57834316-9f4c2480-77ee-11e9-9cf4-9baa6ea45ef0.png" alt="image"></li>
+</ul>
 </div>
   <div class="toc">
 

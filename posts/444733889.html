@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="/css/app.css" />
 <link rel="stylesheet" href="/css/gitting.css" />
   <title>
-关于我 - 无讼法苑
+Wordfence 安全插件专业版破解教程 - 无讼法苑
 </title>
 </head>
 
@@ -38,10 +38,72 @@
 
 
 <div id="post" class="center">
-  <p class="time">December 07, 2018</p>
-  <h1 class="title">关于我</h1>
-  <div class="content"><p>mail: <a href="mailto:chunxiaqiu13@gmail.com">chunxiaqiu13@gmail.com</a>
-QQ: 601743449</p>
+  <p class="time">May 16, 2019</p>
+  <h1 class="title">Wordfence 安全插件专业版破解教程</h1>
+  <div class="content"><p>最近在国外论坛 <a href="http://www.nulled.to">www.nulled.to</a> 上看到这样一个破解 Wordfence 安全插件专业版的方法，试了一下，可行。下面附上教程。</p>
+<h2 id="教程">教程：</h2><ul>
+<li><p>第 1 步：登录您的 WordPress 网站，并安装 Wordfence 插件。</p>
+</li>
+<li><p>第 2 步：安装后会弹出一个添加邮箱，输入后接着出现一个专业版授权码的窗口，不激活</p>
+</li>
+<li><p>第 3 步：连接你的 FTP，并找到以下路径：wp-content/plugins/wordfence/lib</p>
+</li>
+<li><p>第 4 步：打开 wordfenceClass.php 文件，推荐使用 <code>Notepad++</code>等软件</p>
+</li>
+<li><p>第 5 步：搜索（约1955行）
+<code>`</code>
+if (!WFWAF_SUBDIRECTORY_INSTALL &amp;&amp; $waf = wfWAF::getInstance()) {</p>
+</li>
+</ul>
+<p>找到 $siteurl = wfUtils::wpSiteURL(); 这一行代码（大概在下两行的位置）</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+</pre>
+              </td>
+              <td class="code"><pre>
+- 第 6 步：在找到的代码下添加</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>wfConfig::set(&#39;isPaid&#39;, 1);
+wfConfig::set(&#39;keyType&#39;, wfAPI::KEY_TYPE_PAID_CURRENT);
+!!wfConfig::set(&#39;isPaid&#39;, 1);
+!!wfConfig::set(&#39;keyType&#39;, wfAPI::KEY_TYPE_PAID_CURRENT);</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>修改后的的完整代码为</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>// Sync the WAF data with the database.
+if (!WFWAF_SUBDIRECTORY_INSTALL &amp;&amp; $waf = wfWAF::getInstance()) {
+    $homeurl = wfUtils::wpHomeURL();
+    $siteurl = wfUtils::wpSiteURL();
+    wfConfig::set(&#39;isPaid&#39;, 1);
+    wfConfig::set(&#39;keyType&#39;, wfAPI::KEY_TYPE_PAID_CURRENT);
+    !!wfConfig::set(&#39;isPaid&#39;, 1);
+    !!wfConfig::set(&#39;keyType&#39;, wfAPI::KEY_TYPE_PAID_CURRENT);
+}
+<code>`</code></p>
+<ul>
+<li>第 7 步：保存然后上传覆盖源文件。</li>
+</ul>
+<p>最后关闭授权码窗口，进入插件的仪表盘就 OK 了。</p>
 </div>
   <div class="toc">
 

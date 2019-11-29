@@ -1,0 +1,844 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="分享，极致生活！！！" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="/css/app.css" />
+<link rel="stylesheet" href="/css/gitting.css" />
+  <title>
+Git常用命令总结 - 无讼法苑
+</title>
+</head>
+
+<body>
+
+<div class="main">
+
+<div class="header">
+    <a class="logo" href="/">无讼法苑</a><!--
+
+ --><div class="menu">
+        <a href="/archives/">Archives</a><a href="/about/">About</a>
+    </div>
+
+    <div class="social">
+        <a target="_blank" href="https://github.com/fydy/elaw/issues"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path>
+</svg></a><!--
+    --><a target="_blank" href="/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z"></path>
+</svg></a>
+        
+    </div>
+</div>
+
+
+<div id="post" class="center">
+  <p class="time">April 24, 2019</p>
+  <h1 class="title">Git常用命令总结</h1>
+  <div class="content"><p><img src="https://user-images.githubusercontent.com/39726855/56782971-042de380-681c-11e9-8563-2fbe2e79c9b7.png" alt="image"></p>
+<h1 id="添加自己的项目">添加自己的项目</h1>
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+</pre>
+              </td>
+              <td class="code"><pre>git init
+git remote add origin https:&#x2F;&#x2F;github.com&#x2F;fydy&#x2F;fydy.github.io.git</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <h1 id="新建并切换分支">新建并切换分支</h1>
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+</pre>
+              </td>
+              <td class="code"><pre>git checkout --orphan source
+git add -A</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <h1 id="提交项目">提交项目</h1>
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+</pre>
+              </td>
+              <td class="code"><pre>git commit -m &quot;Travis CI&quot;
+git push origin source -f</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <h1 id="整合命令">整合命令</h1>
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+</pre>
+              </td>
+              <td class="code"><pre>修订整合命名：git status &amp;&amp; git add . &amp;&amp; git commit -m &quot;Travis CI&quot; &amp;&amp; git push origin source -f
+新增整合命令：git init &amp;&amp; git remote add origin git@github.com:towit&#x2F;towit.github.io.git &amp;&amp; git checkout --orphan source &amp;&amp; git add . &amp;&amp; git commit -m &quot;Travis CI&quot; &amp;&amp; git push origin source -f</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <h1 id="git远程操作详解">Git远程操作详解</h1><h2 id="gitclone">git clone</h2><p>远程操作的第一步，通常是从远程主机克隆一个版本库，这时就要用到git clone命令。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git clone &lt;版本库的网址&gt;</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>比如，克隆jQuery的版本库。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git clone https:&#x2F;&#x2F;github.com&#x2F;jquery&#x2F;jquery.git</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>该命令会在本地主机生成一个目录，与远程主机的版本库同名。如果要指定不同的目录名，可以将目录名作为git clone命令的第二个参数。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git clone &lt;版本库的网址&gt; &lt;本地目录名&gt;</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>git clone支持多种协议，除了HTTP(s)以外，还支持SSH、Git、本地文件协议等，下面是一些例子。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+<span>3</span>
+<span>4</span>
+<span>5</span>
+<span>6</span>
+<span>7</span>
+</pre>
+              </td>
+              <td class="code"><pre>git clone http[s]:&#x2F;&#x2F;example.com&#x2F;path&#x2F;to&#x2F;repo.git&#x2F;
+git clone ssh:&#x2F;&#x2F;example.com&#x2F;path&#x2F;to&#x2F;repo.git&#x2F;
+git clone git:&#x2F;&#x2F;example.com&#x2F;path&#x2F;to&#x2F;repo.git&#x2F;
+git clone &#x2F;opt&#x2F;git&#x2F;project.git 
+git clone file:&#x2F;&#x2F;&#x2F;opt&#x2F;git&#x2F;project.git
+git clone ftp[s]:&#x2F;&#x2F;example.com&#x2F;path&#x2F;to&#x2F;repo.git&#x2F;
+git clone rsync:&#x2F;&#x2F;example.com&#x2F;path&#x2F;to&#x2F;repo.git&#x2F;</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>SSH协议还有另一种写法。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git clone [user@]example.com:path&#x2F;to&#x2F;repo.git&#x2F;</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>通常来说，Git协议下载速度最快，SSH协议用于需要用户认证的场合。各种协议优劣的详细讨论请参考官方文档。</p>
+<h2 id="gitremote">git remote</h2><p>为了便于管理，Git要求每个远程主机都必须指定一个主机名。git remote命令就用于管理主机名。
+不带选项的时候，git remote命令列出所有远程主机。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+</pre>
+              </td>
+              <td class="code"><pre>git remote
+origin</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>使用-v选项，可以参看远程主机的网址。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+<span>3</span>
+</pre>
+              </td>
+              <td class="code"><pre>git remote -v
+origin  git@github.com:jquery&#x2F;jquery.git (fetch)
+origin  git@github.com:jquery&#x2F;jquery.git (push)</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>上面命令表示，当前只有一台远程主机，叫做origin，以及它的网址。
+克隆版本库的时候，所使用的远程主机自动被Git命名为origin。如果想用其他的主机名，需要用git clone命令的-o选项指定。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+<span>3</span>
+</pre>
+              </td>
+              <td class="code"><pre>git clone -o jQuery https:&#x2F;&#x2F;github.com&#x2F;jquery&#x2F;jquery.git
+git remote
+jQuery</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>上面命令表示，克隆的时候，指定远程主机叫做jQuery。
+git remote show命令加上主机名，可以查看该主机的详细信息。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git remote show &lt;主机名&gt;</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>git remote add命令用于添加远程主机。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git remote add &lt;主机名&gt; &lt;网址&gt;</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>git remote rm命令用于删除远程主机。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git remote rm &lt;主机名&gt;</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>git remote rename命令用于远程主机的改名。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git remote rename &lt;原主机名&gt; &lt;新主机名&gt;</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <h2 id="gitfetch">git fetch</h2><p>一旦远程主机的版本库有了更新（Git术语叫做commit），需要将这些更新取回本地，这时就要用到git fetch命令。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git fetch &lt;远程主机名&gt;</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>上面命令将某个远程主机的更新，全部取回本地。
+git fetch命令通常用来查看其他人的进程，因为它取回的代码对你本地的开发代码没有影响。
+默认情况下，git fetch取回所有分支（branch）的更新。如果只想取回特定分支的更新，可以指定分支名。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git fetch &lt;远程主机名&gt; &lt;分支名&gt;</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>比如，取回origin主机的master分支。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git fetch origin master</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>所取回的更新，在本地主机上要用&quot;远程主机名/分支名&quot;的形式读取。比如origin主机的master，就要用origin/master读取。
+git branch命令的-r选项，可以用来查看远程分支，-a选项查看所有分支。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+<span>3</span>
+<span>4</span>
+<span>5</span>
+<span>6</span>
+</pre>
+              </td>
+              <td class="code"><pre>git branch -r
+origin&#x2F;master
+
+git branch -a
+* master
+  remotes&#x2F;origin&#x2F;master</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>上面命令表示，本地主机的当前分支是master，远程分支是origin/master。
+取回远程主机的更新以后，可以在它的基础上，使用git checkout命令创建一个新的分支。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git checkout -b newBrach origin&#x2F;master</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>上面命令表示，在origin/master的基础上，创建一个新分支。
+此外，也可以使用git merge命令或者git rebase命令，在本地分支上合并远程分支。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+<span>3</span>
+</pre>
+              </td>
+              <td class="code"><pre>git merge origin&#x2F;master
+# 或者
+git rebase origin&#x2F;master</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>上面命令表示在当前分支上，合并origin/master。</p>
+<h2 id="gitpull">git pull</h2><p>git pull命令的作用是，取回远程主机某个分支的更新，再与本地的指定分支合并。它的完整格式稍稍有点复杂。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>比如，取回origin主机的next分支，与本地的master分支合并，需要写成下面这样。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git pull origin next:master</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>如果远程分支是与当前分支合并，则冒号后面的部分可以省略。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git pull origin next</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>上面命令表示，取回origin/next分支，再与当前分支合并。实质上，这等同于先做git fetch，再做git merge。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+</pre>
+              </td>
+              <td class="code"><pre>git fetch origin
+git merge origin&#x2F;next</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>在某些场合，Git会自动在本地分支与远程分支之间，建立一种追踪关系（tracking）。比如，在git clone的时候，所有本地分支默认与远程主机的同名分支，建立追踪关系，也就是说，本地的master分支自动&quot;追踪&quot;origin/master分支。
+Git也允许手动建立追踪关系。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git branch --set-upstream master origin&#x2F;next</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>上面命令指定master分支追踪origin/next分支。
+如果当前分支与远程分支存在追踪关系，git pull就可以省略远程分支名。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git pull origin</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>上面命令表示，本地的当前分支自动与对应的origin主机&quot;追踪分支&quot;（remote-tracking branch）进行合并。
+如果当前分支只有一个追踪分支，连远程主机名都可以省略。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git pull</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>上面命令表示，当前分支自动与唯一一个追踪分支进行合并。
+如果合并需要采用rebase模式，可以使用--rebase选项。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git pull --rebase &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>如果远程主机删除了某个分支，默认情况下，git pull 不会在拉取远程分支的时候，删除对应的本地分支。这是为了防止，由于其他人操作了远程主机，导致git pull不知不觉删除了本地分支。
+但是，你可以改变这个行为，加上参数 -p 就会在本地删除远程已经删除的分支。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+<span>3</span>
+<span>4</span>
+</pre>
+              </td>
+              <td class="code"><pre>git pull -p
+# 等同于下面的命令
+git fetch --prune origin 
+git fetch -p</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <h2 id="gitpush">git push</h2><p>git push命令用于将本地分支的更新，推送到远程主机。它的格式与git pull命令相仿。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>注意，分支推送顺序的写法是&lt;来源地&gt;:&lt;目的地&gt;，所以git pull是&lt;远程分支&gt;:&lt;本地分支&gt;，而git push是&lt;本地分支&gt;:&lt;远程分支&gt;。
+如果省略远程分支名，则表示将本地分支推送与之存在&quot;追踪关系&quot;的远程分支（通常两者同名），如果该远程分支不存在，则会被新建。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git push origin master</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>上面命令表示，将本地的master分支推送到origin主机的master分支。如果后者不存在，则会被新建。
+如果省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+<span>3</span>
+</pre>
+              </td>
+              <td class="code"><pre>git push origin :master
+# 等同于
+git push origin --delete master</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>上面命令表示删除origin主机的master分支。
+如果当前分支与远程分支之间存在追踪关系，则本地分支和远程分支都可以省略。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git push origin</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>上面命令表示，将当前分支推送到origin主机的对应分支。
+如果当前分支只有一个追踪分支，那么主机名都可以省略。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git push</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>如果当前分支与多个主机存在追踪关系，则可以使用-u选项指定一个默认主机，这样后面就可以不加任何参数使用git push。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git push -u origin master</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>上面命令将本地的master分支推送到origin主机，同时指定origin为默认主机，后面就可以不加任何参数使用git push了。
+不带任何参数的git push，默认只推送当前分支，这叫做simple方式。此外，还有一种matching方式，会推送所有有对应的远程分支的本地分支。Git 2.0版本之前，默认采用matching方法，现在改为默认采用simple方式。如果要修改这个设置，可以采用git config命令。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+<span>3</span>
+</pre>
+              </td>
+              <td class="code"><pre>git config --global push.default matching
+# 或者
+git config --global push.default simple</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>还有一种情况，就是不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机，这时需要使用--all选项。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git push --all origin</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>上面命令表示，将所有本地分支都推送到origin主机。
+如果远程主机的版本比本地版本更新，推送时Git会报错，要求先在本地做git pull合并差异，然后再推送到远程主机。这时，如果你一定要推送，可以使用--force选项。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git push --force origin</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>上面命令使用--force选项，结果导致远程主机上更新的版本被覆盖。除非你很确定要这样做，否则应该尽量避免使用--force选项。
+最后，git push不会推送标签（tag），除非使用--tags选项。</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>git push origin --tags</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>vim .gitignore 新增以及编写这个文件</p>
+<p>node_modules/</p>
+<p>意思就是上传的时候忽略这个文件夹以及里面的内容，因为我上传的是nodejs项目文件，所以不用把node_modules上传上去</p>
+<h2 id="关于nodejs的npm命令无反应的解决方案">关于nodejs的npm命令无反应的解决方案：</h2><p>看到nodejs的默认模块安装路径在c盘
+于是想修改下，按命令 npm config set prefix 。
+结果就遇坑了，之后我的npm命令完全无反应，不是加载的那种状态
+而是下标不停地在哪里闪...
+之后找解决方案，说要删除npmrc文件。
+强调：不是nodejs安装目录npm模块下的那个npmrc文件
+而是在C:\Users{账户}\下的.npmrc文件.... </p>
+<h2 id="nodejswindow下安装与配置淘宝镜像">nodejs window下安装与配置淘宝镜像</h2><p>1，前往nodejs官网下载安装软件，地址：<a href="https://nodejs.org/en/">https://nodejs.org/en/</a> 
+2，点击下一步继续安装，安装完成，在命令输入：node -v,npm -v,查看版本，即是安装成功 
+3，随便在计算机哪个盘建一个全局目录，比如我的在E盘：E:\nodejs\node_global 
+4，设置nodejs全局目录，所有以全局安装的包都被安装在这，打开nodejs命令行窗口，</p>
+<ul>
+<li><p>使用命令行设置：</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+</pre>
+              </td>
+              <td class="code"><pre>npm config set cache &quot;E:\nodejs\node_cache&quot;
+npm config set prefix &quot;E:\nodejs\node_global&quot;</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </li>
+<li><p>设置环境变量</p>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>1.用户变量 path 中把 
+C:\Users\Administrator\AppData\Roaming\npm; 
+—改为—- 
+E:\nodejs\node_global
+2.在系统变量中 新增变量 
+NODE_PATH—– E:\nodejs\node_global\node_modules
+3.系统变量中 path:C:\Program Files\nodejs; 
+E:\nodejs\node_global\node_modules;</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<p>5,前往淘宝镜像官网 <a href="http://npm.taobao.org/%EF%BC%8C%E5%8F%AF%E6%9F%A5%E7%9C%8B%E5%AE%89%E8%A3%85cnpm%E5%8C%85%E7%9A%84%E5%91%BD%E4%BB%A4">http://npm.taobao.org/，可查看安装cnpm包的命令</a>
+在命令行输入：</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <div class="toc">
+
+</div>
+  
+  <div class="comments"></div>
+    <div id="gitting-container"></div>
+    <script src="/js/gitting.js"></script>
+    <script>
+        const gitting = new Gitting({
+            clientID: '8c41b16a70910b0692df',
+            clientSecret: '079d61508f7fb7133654221f587d5907edccb394',
+            repo: 'issue',
+            owner: 'fydy',
+            admin: ['fydy'],
+            id: location.pathname
+        });
+
+        gitting.render('#gitting-container');
+    </script>
+</div>
+
+
+</div>
+
+<div class="footer">
+    <div class="center">
+      无讼法苑 / Powered by
+      <a target="_blank" href="https://github.com/acyortjs/acyort">AcyOrt</a> /
+      Theme
+      <a target="_blank" href="https://github.com/acyortjs/theme-donob">donob</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="分享，极致生活！！！" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="/css/app.css" />
+<link rel="stylesheet" href="/css/gitting.css" />
+  <title>
+在 CentOS 7 下安装配置 Shadowsocks - 无讼法苑
+</title>
+</head>
+
+<body>
+
+<div class="main">
+
+<div class="header">
+    <a class="logo" href="/">无讼法苑</a><!--
+
+ --><div class="menu">
+        <a href="/archives/">Archives</a><a href="/about/">About</a>
+    </div>
+
+    <div class="social">
+        <a target="_blank" href="https://github.com/fydy/elaw/issues"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path>
+</svg></a><!--
+    --><a target="_blank" href="/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z"></path>
+</svg></a>
+        
+    </div>
+</div>
+
+
+<div id="post" class="center">
+  <p class="time">November 22, 2019</p>
+  <h1 class="title">在 CentOS 7 下安装配置 Shadowsocks</h1>
+  <div class="content"><p>Shadowsokcks是一款翻墙代理软件，此软件会智能判断所访问网站是否被墙，被墙的网站会通过远端服务器进行访问，但是某些被墙的网站没有及时添加到shadowsocks的数据库中，导致这些网站依然无法访问，或者某些网站在国内可以正常访问，但是速度很慢，希望通过shadowsocks进行加速，我们可以通过手动在本地添加网址的方式解决。下面是基于centos7环境搭建Shadowsocks。</p>
+<h3 id="installthenecessarycomponents">Install the necessary components</h3>
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+</pre>
+              </td>
+              <td class="code"><pre>sudo yum install epel-release -y
+sudo yum install gcc gettext autoconf libtool automake make pcre-devel asciidoc xmlto c-ares-devel libev-devel libsodium-devel mbedtls-devel -y</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <h3 id="downloadshadowsockslivevrepo">download shadowsocks-livev repo</h3>
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>sudo wget -P &#x2F;etc&#x2F;yum.repos.d&#x2F; https:&#x2F;&#x2F;copr.fedorainfracloud.org&#x2F;coprs&#x2F;librehat&#x2F;shadowsocks&#x2F;repo&#x2F;epel-7&#x2F;librehat-shadowsocks-epel-7.repo</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <h3 id="installshadowsockslivev">install shadowsocks-livev</h3>
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>sudo yum install -y shadowsocks-libev</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <h3 id="createconfigfile">Create config file</h3><p>sudo vim /opt/shadowsocks.json</p>
+
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+<span>3</span>
+<span>4</span>
+<span>5</span>
+<span>6</span>
+</pre>
+              </td>
+              <td class="code"><pre>{
+    &quot;server&quot;: [&quot;[::0]&quot;, &quot;0.0.0.0&quot;],
+    &quot;server_port&quot;: &quot;8088&quot;,
+    &quot;password&quot;: &quot;password&quot;,
+    &quot;method&quot;: &quot;aes-256-cfb&quot;
+}</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <p>将8088<code></code>password<code>替换为自己的数值，其中</code>password` 尽量设置强一点，包含符合，避免被暴力破解。</p>
+<h3 id="createsystemctlservice">Create systemctl service</h3>
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+</pre>
+              </td>
+              <td class="code"><pre>sudo vim &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;shadowsocks.service</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+<span>3</span>
+<span>4</span>
+<span>5</span>
+<span>6</span>
+<span>7</span>
+<span>8</span>
+<span>9</span>
+</pre>
+              </td>
+              <td class="code"><pre>[Unit]
+Description&#x3D;Shadowsocks
+
+[Service]
+TimeoutStartSec&#x3D;0
+ExecStart&#x3D;&#x2F;usr&#x2F;bin&#x2F;ss-server -c &#x2F;opt&#x2F;shadowsocks.json
+
+[Install]
+WantedBy&#x3D;multi-user.target</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <h3 id="startandenabletheservice">Start and enable the service</h3>
+      <div class="hljs">
+        <table>
+          <tbody>
+            <tr>
+              <td class="line">
+                <pre><span>1</span>
+<span>2</span>
+</pre>
+              </td>
+              <td class="code"><pre>sudo systemctl start shadowsocks
+sudo systemctl enable shadowsocks</pre></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <div class="toc">
+
+</div>
+  
+  <div class="comments"></div>
+    <div id="gitting-container"></div>
+    <script src="/js/gitting.js"></script>
+    <script>
+        const gitting = new Gitting({
+            clientID: '8c41b16a70910b0692df',
+            clientSecret: '079d61508f7fb7133654221f587d5907edccb394',
+            repo: 'issue',
+            owner: 'fydy',
+            admin: ['fydy'],
+            id: location.pathname
+        });
+
+        gitting.render('#gitting-container');
+    </script>
+</div>
+
+
+</div>
+
+<div class="footer">
+    <div class="center">
+      无讼法苑 / Powered by
+      <a target="_blank" href="https://github.com/acyortjs/acyort">AcyOrt</a> /
+      Theme
+      <a target="_blank" href="https://github.com/acyortjs/theme-donob">donob</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
